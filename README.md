@@ -117,4 +117,3 @@ uranus-fake-iframe/
 └── icons/
     └── icon.svg    — Toolbar icon
 ```
-# Uranus-Fake-Iframe
