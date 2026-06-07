@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Uranus Fake Iframe",
+  "version": "1.0.0",
+  "description": "Inject a fixed-position iframe at the bottom of any web page",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.svg",
+    "default_title": "Uranus Fake Iframe"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}

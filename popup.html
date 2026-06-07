@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uranus Fake Iframe</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 340px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #002636;
+      color: #e2e8f0;
+    }
+
+    .header {
+      background: #01577C;
+      padding: 14px 16px 12px;
+      border-bottom: 1px solid #5DA9B6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    .subtitle {
+      font-size: 9px;
+      color: #60E7F9;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 4px;
+      opacity: 0.7;
+    }
+
+    .container { padding: 16px; }
+
+    .field { margin-bottom: 12px; }
+
+    label {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: #60E7F9;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 5px;
+      opacity: 0.85;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      background: #01577C;
+      border: 1px solid #5DA9B6;
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    input:focus {
+      border-color: #60E7F9;
+      box-shadow: 0 0 0 2px rgba(96, 231, 249, 0.15);
+    }
+
+    input::placeholder { color: #3a7a8a; }
+
+    input[type="number"] { -moz-appearance: textfield; }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+    .divider {
+      height: 1px;
+      background: #5DA9B6;
+      opacity: 0.2;
+      margin: 14px 0;
+    }
+
+    .status {
+      min-height: 18px;
+      font-size: 11px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .status.success { color: #60E7F9; }
+    .status.error   { color: #FEB2B2; }
+
+    .actions { display: flex; gap: 8px; }
+
+    button {
+      flex: 1;
+      padding: 9px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.2px;
+    }
+
+    button:active { transform: scale(0.97); }
+
+    .btn-confirm {
+      background: #60E7F9;
+      color: #002636;
+    }
+    .btn-confirm:hover { background: #4bd2e0; }
+
+    .btn-clear {
+      background: transparent;
+      color: #60E7F9;
+      border: 1px solid #5DA9B6;
+    }
+    .btn-clear:hover {
+      background: rgba(96, 231, 249, 0.08);
+      border-color: #60E7F9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <img src="icons/logo.svg" alt="Uranus" />
+      <div class="subtitle">Fake Iframe</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="field">
+      <label for="height">Height (px)</label>
+      <input type="number" id="height" placeholder="150" min="1" />
+    </div>
+
+    <div class="field">
+      <label for="htmlUrl">HTML URL</label>
+      <input type="text" id="htmlUrl" placeholder="https://example.com/ad.html" />
+    </div>
+
+    <div class="field">
+      <label for="landingUrl">Landing URL</label>
+      <input type="text" id="landingUrl" placeholder="https://landing.com" />
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="status" id="status"></div>
+
+    <div class="actions">
+      <button type="button" id="clearBtn"   class="btn-clear">Clear</button>
+      <button type="button" id="confirmBtn" class="btn-confirm">تایید</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
